@@ -1707,7 +1707,7 @@ input::placeholder {
 }
 
 @media (max-width: 1500px) {
-  .service-video {
+  .section-service {
     margin-bottom: 60px;
   }
   .service-item {
