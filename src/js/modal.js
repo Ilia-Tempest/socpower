@@ -1,3 +1,4 @@
+
 // функция вызова окна
 function show_popap(id_popap) {
     var id = "#" + id_popap;

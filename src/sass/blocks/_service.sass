@@ -6,10 +6,11 @@
         display: flex
         flex-wrap: wrap
         justify-content: space-between
+        width: 100%
     &-video
         margin-top: 90px
-        max-width: 90%
-        height: auto
+        width: 861px
+        height: 456px
         box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05)
         border-radius: 22px
         background-color: #191919
@@ -40,7 +41,7 @@
             letter-spacing: normal
             line-height: 135.63px
             left: 50%
-            transform: translate(-70%)
+            transform: translate(-60%)
             top: 20px
 @media (max-width: 1500px)
     .section-service
@@ -50,7 +51,10 @@
             max-width: 320px
             &__background
                 transform: translate(-60%)
-
+@media (max-width: 1000px)
+    .service
+        &-video
+            width: 100%
 @media (max-width: 768px)
     .service
         &-video
@@ -70,3 +74,8 @@
             &__text
                 line-height: 25px
                 font-size: 17px
+
+@media (max-width: 600px)
+    .service
+        &-video
+            height: 300px

@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
 	$('.matter-part__1').click(function(){
 		$('.matter-text__1').slideToggle(300, function(){
 							
@@ -54,5 +54,5 @@
     });
 
 
-
+});
 

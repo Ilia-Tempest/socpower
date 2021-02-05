@@ -457,6 +457,7 @@ video {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  width: 100%;
 }
 
 .title-bold {
@@ -490,6 +491,12 @@ video {
     line-height: normal;
     bottom: -10px;
     line-height: 67.91px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title-background {
+    width: auto;
   }
 }
 
@@ -1651,12 +1658,13 @@ input::placeholder {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
 }
 
 .service-video {
   margin-top: 90px;
-  max-width: 90%;
-  height: auto;
+  width: 861px;
+  height: 456px;
   -webkit-box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05);
           box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05);
   border-radius: 22px;
@@ -1701,8 +1709,8 @@ input::placeholder {
   letter-spacing: normal;
   line-height: 135.63px;
   left: 50%;
-  -webkit-transform: translate(-70%);
-          transform: translate(-70%);
+  -webkit-transform: translate(-60%);
+          transform: translate(-60%);
   top: 20px;
 }
 
@@ -1716,6 +1724,12 @@ input::placeholder {
   .service-item__background {
     -webkit-transform: translate(-60%);
             transform: translate(-60%);
+  }
+}
+
+@media (max-width: 1000px) {
+  .service-video {
+    width: 100%;
   }
 }
 
@@ -1752,6 +1766,12 @@ input::placeholder {
   .service-item__text {
     line-height: 25px;
     font-size: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-video {
+    height: 300px;
   }
 }
 
@@ -2236,8 +2256,8 @@ input::placeholder {
           box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05);
   border-radius: 22px;
   background-color: #191919;
-  max-width: 100%;
-  height: auto;
+  width: 861px;
+  height: 456px;
 }
 
 .comment-text {
@@ -2280,6 +2300,15 @@ input::placeholder {
   }
 }
 
+@media (max-width: 1000px) {
+  .comment-video {
+    width: 100%;
+  }
+  .comment-content {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .section-comment {
     padding-top: 100px;
@@ -2296,6 +2325,12 @@ input::placeholder {
   .comment-text__subtitle {
     font-size: 17px;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .comment-video {
+    height: 300px;
   }
 }
 

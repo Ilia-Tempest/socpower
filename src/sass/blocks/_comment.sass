@@ -41,8 +41,8 @@
         box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05)
         border-radius: 22px
         background-color: #191919
-        max-width: 100%
-        height: auto
+        width: 861px
+        height: 456px
     &-text
         display: flex
         flex-direction: column
@@ -67,7 +67,12 @@
             visibility: hidden
         &-right
             visibility: hidden
-
+@media (max-width: 1000px)
+    .comment
+        &-video
+            width: 100%
+        &-content
+            width: 100%
 @media (max-width: 768px)
     .section-comment
         padding-top: 100px
@@ -82,6 +87,8 @@
             &__subtitle
                 font-size: 17px
                 margin-top: 10px
-
-
+@media (max-width: 600px)
+    .comment
+        &-video
+            height: 300px
         

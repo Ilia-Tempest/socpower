@@ -1,3 +1,4 @@
+$(document).ready(function(){
 /* Когда пользователь нажимает на кнопку,
 переключение между скрытием и отображением раскрывающегося содержимого */
 
@@ -39,7 +40,7 @@ item5.addEventListener ("click", function() {
    $('#mobile-menu').removeClass('show-active');
 });
 
- $(document).ready(function() {
+
    var margin = 100; // переменная для контроля докрутки
    $("a").click(function() { // тут пишите условия, для всех ссылок или для конкретных
       $("html, body").animate({
@@ -50,5 +51,6 @@ item5.addEventListener ("click", function() {
       });
       return false;
    });
-});
 
+
+});
