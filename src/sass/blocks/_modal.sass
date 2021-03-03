@@ -1,6 +1,24 @@
 input::placeholder 
   color: rgba(24, 24, 24, 0.2)
+.overlay-pass
+	position: relative
+.overlay-pass
+  margin-top: 30px
+.overlay-control 
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	background: url(../img/modal/eye.png) 0 0 no-repeat
+.overlay-control
+  transform: translateY(-50%)
+  top: 50%
 
+
+.overlay-control.view 
+	background: url(../img/modal/eye.png) 0 0 no-repeat
 .close
   box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05)
   background-color: #f6f7fb
@@ -12,14 +30,44 @@ input::placeholder
   &_popap
     z-index: 2
 .overlay 
+  background-color: #508dfe
   position: fixed
   z-index: 5
   height: 100%
   width: 100%
   top: 0
   left: 0
-  background-color: rgba(15, 19, 35, 0.85)
+  align-items: center
+  justify-content: center
   display: none
+ 
+
+  &-link
+    display: flex
+    align-items: center
+    flex-direction: column
+    margin-top: 60px
+  &-a
+    font-family: "Proxima Nova Regular", sans-serif
+    font-size: 25px
+    font-weight: 600
+    color: #0c182e
+    &__end 
+      margin-top: 25px
+    &__regist
+      margin-top: 0px
+  &-1
+    overflow: auto
+    background-color: #508dfe
+    position: fixed
+    z-index: 5
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center
   &__subtitle
       color: #1a1a1a
       font-family: "Proxima Nova Regular", sans-serif
@@ -58,10 +106,9 @@ input::placeholder
     font-family: "Proxima Nova Regular", sans-serif
     font-size: 20px
     font-weight: 400
-    margin-top: 30px
     padding-top: 27px
     padding-bottom: 27px
-    &:first-child
+    &-user
       margin-top: 0px
       background-image: url(../img/modal/user_2.webp)
       background-repeat: no-repeat
@@ -70,16 +117,21 @@ input::placeholder
         background-image: url(../img/modal/key.webp)
         background-repeat: no-repeat
         background-position: 30px center
-
   &__button
     border-radius: 45px
     background-color: #508dff
     background-image: linear-gradient(to right, #2f73ff 0%, #68a0fe 100%)
     display: flex
+    box-shadow: 0 5px 30px -5px rgba(47, 115, 255, 1)
     align-items: center
     margin-top: 65px
     padding: 30px 160px
     justify-content: center
+    &:hover, &:focus, &:visited, &:active
+      color:#eff0f4
+      background-image: linear-gradient(to right, #0f50d4 0%, #3f7ce4 100%)
+      box-shadow: 0 5px 30px -5px rgba(15, 80, 212, 1)
+   
     &-text
         margin-right: 25px
         color: #ffffff
@@ -90,12 +142,26 @@ input::placeholder
 .overlay.active 
   display: block;
 
+.overlay-1 .flex-popap 
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 .overlay .flex-popap 
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
+.overlay-1 .flex-popap .popap 
+  position: relative;
+  background-color: #304247
+  border-radius: 50px;
+  padding: 60px 25px;
+  margin: 0 10px;
+  width: 661px
+  box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05)
+  border-radius: 20px
+  background-color: #e0ebf3
 .overlay .flex-popap .popap 
   position: relative;
   background-color: #304247
@@ -106,7 +172,6 @@ input::placeholder
   box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05)
   border-radius: 20px
   background-color: #e0ebf3
-  
 
 .popap span 
   position: absolute
@@ -130,6 +195,8 @@ input::placeholder
     &__conf
       font-size: 10px
  .overlay
+   &-control
+     right: 14px
    &__button
      font-size: 20px
      padding: 30px 120px
@@ -140,8 +207,13 @@ input::placeholder
    &__input
     font-size: 24px
     max-width: 300px
+ .overlay-1 .flex-popap .popap 
+    height: auto
+    width: auto
+    padding: 50px 25px
  .overlay .flex-popap .popap 
     height: auto
+    width: auto
     padding: 50px 25px
 @media (max-width: 530px)
   .close
@@ -149,13 +221,27 @@ input::placeholder
       top: 0
       right: 0
   .overlay
+    &-link
+      margin-top: 40px
+    &-a
+      font-size: 20px
     &__input
+        font-size: 14px
         max-width: 200px
+        &-end
+          background-size: 26px
+        &-user
+          background-size: 26px
     &-round
       display: none
     &__button
         margin-top: 40px
         padding: 30px 80px
 
-
-        
+@media (max-width: 330px)
+  .overlay .flex-popap .popap 
+    padding: 50px 15px
+  .overlay
+    &__input
+      font-size: 10px
+      max-width: 160px

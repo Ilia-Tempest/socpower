@@ -417,6 +417,7 @@ img {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -860,6 +861,34 @@ input::placeholder {
   color: rgba(24, 24, 24, 0.2);
 }
 
+.overlay-pass {
+  position: relative;
+}
+
+.overlay-pass {
+  margin-top: 30px;
+}
+
+.overlay-control {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background: url(../img/modal/eye.png) 0 0 no-repeat;
+}
+
+.overlay-control {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+}
+
+.overlay-control.view {
+  background: url(../img/modal/eye.png) 0 0 no-repeat;
+}
+
 .close {
   -webkit-box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05);
           box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05);
@@ -876,14 +905,69 @@ input::placeholder {
 }
 
 .overlay {
+  background-color: #508dfe;
   position: fixed;
   z-index: 5;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(15, 19, 35, 0.85);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: none;
+}
+
+.overlay-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 60px;
+}
+
+.overlay-a {
+  font-family: "Proxima Nova Regular", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #0c182e;
+}
+
+.overlay-a__end {
+  margin-top: 25px;
+}
+
+.overlay-a__regist {
+  margin-top: 0px;
+}
+
+.overlay-1 {
+  overflow: auto;
+  background-color: #508dfe;
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .overlay__subtitle {
@@ -940,12 +1024,11 @@ input::placeholder {
   font-family: "Proxima Nova Regular", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  margin-top: 30px;
   padding-top: 27px;
   padding-bottom: 27px;
 }
 
-.overlay__input:first-child {
+.overlay__input-user {
   margin-top: 0px;
   background-image: url(../img/modal/user_2.webp);
   background-repeat: no-repeat;
@@ -966,6 +1049,8 @@ input::placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-shadow: 0 5px 30px -5px #2f73ff;
+          box-shadow: 0 5px 30px -5px #2f73ff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -974,6 +1059,14 @@ input::placeholder {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.overlay__button:hover, .overlay__button:focus, .overlay__button:visited, .overlay__button:active {
+  color: #eff0f4;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f50d4), to(#3f7ce4));
+  background-image: linear-gradient(to right, #0f50d4 0%, #3f7ce4 100%);
+  -webkit-box-shadow: 0 5px 30px -5px #0f50d4;
+          box-shadow: 0 5px 30px -5px #0f50d4;
 }
 
 .overlay__button-text {
@@ -988,6 +1081,19 @@ input::placeholder {
   display: block;
 }
 
+.overlay-1 .flex-popap {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .overlay .flex-popap {
   height: 100%;
   display: -webkit-box;
@@ -999,6 +1105,19 @@ input::placeholder {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.overlay-1 .flex-popap .popap {
+  position: relative;
+  background-color: #304247;
+  border-radius: 50px;
+  padding: 60px 25px;
+  margin: 0 10px;
+  width: 661px;
+  -webkit-box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05);
+          box-shadow: 2px 33px 51px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  background-color: #e0ebf3;
 }
 
 .overlay .flex-popap .popap {
@@ -1041,6 +1160,9 @@ input::placeholder {
   .mod__conf {
     font-size: 10px;
   }
+  .overlay-control {
+    right: 14px;
+  }
   .overlay__button {
     font-size: 20px;
     padding: 30px 120px;
@@ -1055,8 +1177,14 @@ input::placeholder {
     font-size: 24px;
     max-width: 300px;
   }
+  .overlay-1 .flex-popap .popap {
+    height: auto;
+    width: auto;
+    padding: 50px 25px;
+  }
   .overlay .flex-popap .popap {
     height: auto;
+    width: auto;
     padding: 50px 25px;
   }
 }
@@ -1067,8 +1195,21 @@ input::placeholder {
     top: 0;
     right: 0;
   }
+  .overlay-link {
+    margin-top: 40px;
+  }
+  .overlay-a {
+    font-size: 20px;
+  }
   .overlay__input {
+    font-size: 14px;
     max-width: 200px;
+  }
+  .overlay__input-end {
+    background-size: 26px;
+  }
+  .overlay__input-user {
+    background-size: 26px;
   }
   .overlay-round {
     display: none;
@@ -1076,6 +1217,16 @@ input::placeholder {
   .overlay__button {
     margin-top: 40px;
     padding: 30px 80px;
+  }
+}
+
+@media (max-width: 330px) {
+  .overlay .flex-popap .popap {
+    padding: 50px 15px;
+  }
+  .overlay__input {
+    font-size: 10px;
+    max-width: 160px;
   }
 }
 
@@ -1183,6 +1334,11 @@ input::placeholder {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px 30px;
+}
+
+.header-button:hover, .header-button:focus, .header-button:visited, .header-button:active {
+  background-image: -webkit-gradient(linear, left top, right top, from(#3ab875), to(#4bb87e));
+  background-image: linear-gradient(to right, #3ab875 0%, #4bb87e 100%);
 }
 
 .header-button__text {
@@ -1567,6 +1723,16 @@ input::placeholder {
   background-image: -webkit-gradient(linear, left top, right top, from(#2f73ff), to(#68a0fe));
   background-image: linear-gradient(to right, #2f73ff 0%, #68a0fe 100%);
   margin-right: 30px;
+  -webkit-box-shadow: 0 5px 30px -5px #2f73ff;
+          box-shadow: 0 5px 30px -5px #2f73ff;
+}
+
+.hero-button:hover, .hero-button:focus, .hero-button:visited, .hero-button:active {
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f50d4), to(#3f7ce4));
+  background-image: linear-gradient(to right, #0f50d4 0%, #3f7ce4 100%);
+  color: #eff0f4;
+  -webkit-box-shadow: 0 5px 30px -5px #0f50d4;
+          box-shadow: 0 5px 30px -5px #0f50d4;
 }
 
 .hero-button__text {
@@ -2090,6 +2256,19 @@ input::placeholder {
   background-position: center;
 }
 
+.now {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .now-title {
   color: #ffffff;
   font-family: "Proxima Nova Semibold", sans-serif;
@@ -2130,6 +2309,8 @@ input::placeholder {
           align-items: center;
   z-index: 2;
   position: relative;
+  -webkit-box-shadow: 0 5px 30px -5px white;
+          box-shadow: 0 5px 30px -5px white;
 }
 
 .now-button__text {
@@ -2343,6 +2524,19 @@ input::placeholder {
   background-repeat: no-repeat;
 }
 
+.popular {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .popular-text {
   color: #0f1323;
   font-family: "Proxima Nova Regular", sans-serif;
@@ -2367,10 +2561,19 @@ input::placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-shadow: 0 5px 30px -5px #2f73ff;
+          box-shadow: 0 5px 30px -5px #2f73ff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
+}
+
+.popular-button:hover, .popular-button:focus, .popular-button:visited, .popular-button:active {
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f50d4), to(#3f7ce4));
+  background-image: linear-gradient(to right, #0f50d4 0%, #3f7ce4 100%);
+  -webkit-box-shadow: 0 5px 30px -5px #0f50d4;
+          box-shadow: 0 5px 30px -5px #0f50d4;
 }
 
 .popular-button__text {
